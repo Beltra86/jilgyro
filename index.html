@@ -3,129 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menù Nuziale - Estremamente Formale</title>
+    <title>Menù Matrimonio - Piatto Unico Elegante</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
     <style>
-        /* Sfondo del sito, minimalista */
         body {
-            background-color: #fcf8e8; /* Avorio molto chiaro */
+            /* Lato come font di fallback per tutto il corpo */
+            font-family: 'Lato', sans-serif; 
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 40px;
-            font-family: 'Times New Roman', Times, serif; /* Font formale */
+            padding: 20px;
         }
 
-        /* Contenitore della Pergamena (dove l'immagine sarà applicata) */
         .menu-container {
-            width: 700px; /* Larghezza fissa, adeguata per un menù */
-            height: 950px; /* Altezza fissa, adeguata per un menù */
-            background-image: url('pergamena.jpg'); /* !!! NOME FILE IMMAGINE PERGAMENA !!! */
-            background-size: 100% 100%; /* Copre esattamente il div */
-            background-repeat: no-repeat;
-            
-            /* Stili per il posizionamento e l'ombra */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Ombra per enfasi e profondità */
-            position: relative;
-            padding: 100px 120px; /* Spazio interno per non sovrapporre il testo ai bordi dell'immagine */
-            box-sizing: border-box; /* Include padding nel width/height */
-            text-align: center; /* Centra tutto il testo nel menù */
+            width: 80%;
+            max-width: 600px;
+            /* ASSICURATI CHE QUESTA IMMAGINE SIA NELLA TUA CARTELLA */
+            background-image: url('pergamena.jpg'); 
+            background-size: cover;
+            background-position: center;
+            padding: 70px 40px; /* Più spazio per un tocco di lusso */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border-radius: 5px;
         }
 
-        /* Stile del Titolo Principale */
-        .titolo-evento {
-            font-family: 'Georgia', serif;
-            font-size: 1.5em;
-            color: #4b0082; /* Viola Regale */
-            letter-spacing: 5px; /* Spaziatura elegante */
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        /* Separatore di linea ornato */
-        .separatore {
-            border: none;
-            height: 2px;
-            background-color: #b8860b; /* Oro */
-            width: 60%;
-            margin: 10px auto 40px auto;
-            opacity: 0.8;
-        }
-
-        /* Titolo del Piatto (Estremamente formale) */
-        h1 {
-            font-family: 'Garamond', serif;
-            font-size: 2.8em;
-            color: #8b4513; /* Marrone Seppia */
-            text-transform: capitalize;
+        .titolo-menu {
+            /* Great Vibes per i titoli eleganti */
+            font-family: 'Great Vibes', cursive; 
+            font-size: 3.5em; /* Aumentato per enfasi */
+            color: #4e342e; /* Marrone scuro, quasi seppia */
+            margin-bottom: 25px;
+            text-transform: capitalize; /* Non tutto maiuscolo per eleganza */
+            border-bottom: 3px solid #bcaaa4; /* Linea di separazione più morbida */
+            display: inline-block;
+            padding-bottom: 10px;
             letter-spacing: 2px;
-            margin-top: 30px;
-            margin-bottom: 50px;
         }
 
-        /* Stile della Descrizione */
-        .descrizione-dettagliata {
-            font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', serif;
-            font-size: 1.2em;
-            color: #333333; /* Grigio scuro per leggibilità */
-            line-height: 1.8; /* Interlinea ampia per eleganza */
-            text-align: justify; /* Testo giustificato (formale) */
-            padding: 0 20px; /* Rientro laterale */
-        }
-        
-        /* Dettaglio del Piatto */
-        .piatto-singolo {
-            margin-bottom: 30px;
+        .sezione-piatto {
+            margin-top: 40px;
         }
 
-        /* I Dettagli Finali */
-        .dettaglio-finale {
-            margin-top: 60px;
-            font-size: 1em;
-            color: #b8860b; /* Oro */
+        .nome-piatto {
+            /* Anche il nome del piatto in Great Vibes */
+            font-family: 'Great Vibes', cursive; 
+            font-size: 2.5em;
+            color: #6d4c41; /* Marrone caldo */
+            margin-bottom: 15px;
+            font-weight: normal; /* Il font calligrafico non necessita di grassetto */
+        }
+
+        .descrizione-piatto {
+            /* Lato più leggero per il corpo del testo */
+            font-family: 'Lato', sans-serif;
+            font-weight: 300; /* Leggero per leggibilità */
+            font-size: 1.1em;
+            color: #4e342e;
+            line-height: 1.8; /* Aumentato per spaziatura elegante */
+            text-align: center; /* Allineamento al centro per il menù singolo */
+            margin: 0 auto;
+            max-width: 85%;
+        }
+
+        .dettaglio {
+            margin-top: 50px;
+            font-size: 1.0em;
+            color: #8d6e63;
             font-style: italic;
-            border-top: 1px solid #d2b48c;
-            padding-top: 20px;
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
         }
-
     </style>
 </head>
 <body>
 
-    <div class="menu-container">
-        
-        <p class="titolo-evento">
-            In Onore del Vostro Giorno
+<div class="menu-container">
+    <header>
+        <h1 class="titolo-menu">Il Vostro Menù</h1>
+    </header>
+    
+    <div class="sezione-piatto">
+        <h2 class="nome-piatto">Piatto di Esempio</h2>
+        <p class="descrizione-piatto">
+            Una sinfonia di sapori che celebra l'unione. Il **Piatto di Esempio** è composto da un letto di tagliatelle fresche all'uovo tirate a mano, condite con un ragù di cinghiale selvatico cotto lentamente per otto ore e sfumato al Barolo. 
+            Il tutto è arricchito da scaglie di pecorino stagionato di Fossa e un ciuffo di basilico fresco. 
+            Un'esperienza culinaria che unisce la tradizione toscana con un tocco di eleganza contemporanea. Perfetto equilibrio tra terra e passione.
         </p>
-
-        <div class="separatore"></div>
-        
-        <p class="titolo-evento" style="font-size: 2.5em; letter-spacing: 8px;">
-            Il Menù Nuziale
-        </p>
-        
-        <hr class="separatore" style="margin-bottom: 80px;">
-
-
-        <div class="piatto-singolo">
-            <h1>Piatto di Esempio</h1>
-            
-            <p class="descrizione-dettagliata">
-                Sua Maestà il **Filetto di Manzo Chianina** in Crosta di Erbe Aromatiche di Provenza, cotto a Bassa Temperatura per ventiquattro ore e rifinito in riduzione di fondo bruno al Barolo Chinato. <br><br>
-                Accompagnato da una **Millefoglie di Patate Anna** stratificate con burro chiarificato e una spolverata di sale Maldon, e una delicatezza di *Asparagi Bianchi di Bassano* conditi con gocce di olio extra vergine d'oliva monocultivar, raccolto al primo mattino. <br><br>
-                Il tutto è impreziosito da una leggera vellutata di Parmigiano Reggiano DOP ventiquattro mesi e scaglie di Tartufo Nero di Norcia. Un’armonia di sapori studiata per celebrare il Vostro Solenne Voto.
-            </p>
-        </div>
-
-        <div class="dettaglio-finale">
-            Si prega di notificare il Maestro di Sala per qualsiasi esigenza dietetica.
-        </div>
-
     </div>
+
+    <footer class="dettaglio">
+        <p>Con i migliori auguri per gli sposi.</p>
+    </footer>
+</div>
 
 </body>
 </html>
