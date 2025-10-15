@@ -76,6 +76,55 @@
             color: #8d6e63;
             font-style: italic;
         }
+
+
+
+    /* NUOVI STILI AGGIUNTI PER I CONTATTI E IL PULSANTE */
+
+.contatti {
+    margin-top: 25px; /* Spazio tra gli auguri e le informazioni */
+}
+
+.info-testo {
+    font-size: 1.1em;
+    color: #4e342e; /* Marrone scuro */
+    margin-bottom: 15px;
+    font-style: normal;
+}
+
+.pulsante-mail {
+    /* Trasforma il link in un blocco per dargli dimensione */
+    display: inline-block;
+    
+    /* Padding per dare l'aspetto del pulsante */
+    padding: 10px 20px;
+    
+    /* Colore di sfondo scuro, come inchiostro */
+    background-color: #5d4037; 
+    
+    /* Testo bianco per contrasto */
+    color: #ffffff; 
+    
+    /* Rimuove la sottolineatura tipica dei link */
+    text-decoration: none;
+    
+    /* Angoli leggermente arrotondati */
+    border-radius: 5px;
+    
+    /* Stile del font elegante */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    
+    /* Effetto transizione al passaggio del mouse */
+    transition: background-color 0.3s ease;
+}
+
+.pulsante-mail:hover {
+    /* Colore leggermente più chiaro al passaggio del mouse per feedback visivo */
+    background-color: #8d6e63; 
+}
+        
+        
     </style>
 </head>
 <body>
@@ -97,7 +146,17 @@
 
     <footer class="dettaglio">
         <p>LIMITED EDITION - 18,500 €</p>
+   
+    <div class="contatti">
+        <p class="info-testo">Per informazioni e prenotazioni</p>
+        
+        <a href="mailto:afterbridge86@gmail.com" class="pulsante-mail">Invia Email</a>
+    </div>
     </footer>
+
+
+
+    
 </div>
 
 </body>
