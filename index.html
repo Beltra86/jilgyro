@@ -1,221 +1,188 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina Elegante</title>
-  <style>
-    /* RESET BASE */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menù del Ristorante - Stile Pergamena Elegante</title>
+    <style>
+        /* Stili Generali e Sfondo */
+        body {
+            font-family: 'Times New Roman', Times, serif; /* Carattere classico e formale */
+            background-color: #f5f5dc; /* Colore di sfondo beige chiaro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-    body {
-      font-family: "Playfair Display", serif;
-      color: #2c1a0f;
-      line-height: 1.6;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Old_paper_texture_background.jpg') center/cover fixed;
-      position: relative;
-      min-height: 100vh;
-    }
+        /* Stile della Pergamena */
+        .pergamena {
+            width: 80%;
+            max-width: 800px;
+            padding: 60px 80px; /* Spaziatura interna generosa */
+            background-color: #fff8e8; /* Colore della carta invecchiata */
+            border: 10px solid #a0522d; /* Bordo elegante color terra di Siena */
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), /* Ombra per profondità */
+                        inset 0 0 50px rgba(160, 82, 45, 0.2); /* Ombra interna per effetto pergamena */
+            position: relative;
+        }
 
-    /* OVERLAY PER LEGGIBILITÀ */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 248, 220, 0.7);
-      z-index: -1;
-    }
+        /* Effetto di Bordatura Interna (simulazione del bordo irregolare/arrotolato della pergamena) */
+        .pergamena::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed #b8860b; /* Bordo dorato tratteggiato */
+            opacity: 0.7;
+            pointer-events: none;
+        }
 
-    /* BORDO DECORATIVO */
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 30px solid transparent;
-      border-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Golden_frame_pattern.png') 60 round;
-      pointer-events: none;
-      z-index: 10;
-    }
+        /* Stili per il Titolo */
+        .titolo-ristorante {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            color: #4b0082; /* Viola indaco per un tocco regale */
+            text-shadow: 1px 1px 2px #d2b48c;
+            border-bottom: 2px solid #b8860b; /* Linea di separazione dorata */
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    /* HEADER & MENU */
-    header {
-      background-color: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
+        /* Stili per le Sezioni del Menù */
+        h2 {
+            font-family: 'Garamond', serif;
+            font-size: 1.8em;
+            color: #8b4513; /* Marrone seppia */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #d2b48c; /* Linea elegante sotto la sezione */
+            padding-bottom: 5px;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            text-align: center;
+        }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-    }
+        /* Stili per gli Elementi del Menù */
+        .piatto {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
 
-    .logo {
-      font-family: "Cinzel", serif;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      color: #3a2415;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
+        .nome-piatto {
+            font-weight: bold;
+            color: #2f4f4f; /* Grigio ardesia scuro */
+            font-size: 1.1em;
+        }
 
-    ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
+        .descrizione-piatto {
+            font-style: italic;
+            color: #696969; /* Grigio più chiaro per la descrizione */
+            font-size: 0.9em;
+            margin-left: 20px; /* Spazio tra nome e descrizione */
+            flex-grow: 1; /* Permette alla descrizione di occupare lo spazio centrale */
+        }
 
-    nav a {
-      text-decoration: none;
-      color: #3a2a18;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+        .prezzo {
+            font-weight: bold;
+            color: #b8860b; /* Oro */
+            font-size: 1.1em;
+            min-width: 50px; /* Assicura allineamento dei prezzi */
+            text-align: right;
+        }
 
-    nav a:hover {
-      color: #a97433;
-    }
-
-    /* SEZIONE HERO */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: #3a2a1a;
-      padding: 0 1rem;
-      background: rgba(255, 255, 255, 0.75);
-      border-radius: 12px;
-      margin: 8rem auto 4rem;
-      max-width: 900px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      max-width: 600px;
-      color: #4a3a2a;
-    }
-
-    /* SEZIONI CONTENUTO */
-    section {
-      max-width: 900px;
-      margin: 6rem auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    section h2 {
-      font-family: "Cinzel", serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #2b1b0f;
-      text-align: center;
-      border-bottom: 2px solid #a97433;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    section p {
-      text-align: justify;
-      color: #43321f;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: rgba(43, 27, 15, 0.95);
-      color: #f8f3e7;
-      font-size: 0.9rem;
-      border-top: 2px solid #a97433;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      ul {
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 200px;
-        display: none;
-      }
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Playfair+Display&display=swap" rel="stylesheet">
+        /* Firma o Nota Finale */
+        .nota-finale {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #8b4513;
+            padding-top: 20px;
+            border-top: 1px solid #d2b48c;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <div class="logo">ElegantMenu</div>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#chi-siamo">Chi Siamo</a></li>
-        <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="pergamena">
+        <h1 class="titolo-ristorante">
+            Il Menù del Duca 🏰
+        </h1>
+        
+        <h2>Antipasti e Preludi di Gusto</h2>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Selezione Reale di Salumi</span>
+            <span class="descrizione-piatto">Con marmellate di fichi e pane tostato al burro d'erbe</span>
+            <span class="prezzo">€ 18</span>
+        </div>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Flan di Zucca e Zafferano</span>
+            <span class="descrizione-piatto">Su crema leggera al Parmigiano Reggiano DOP stagionato</span>
+            <span class="prezzo">€ 16</span>
+        </div>
+        
+        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #b8860b, rgba(0, 0, 0, 0)); margin: 25px 0;">
 
-  <section class="hero" id="home">
-    <h1>Benvenuto nel Nostro Spazio</h1>
-    <p>Eleganza, semplicità e stile racchiusi in una cornice di pergamena dorata.</p>
-  </section>
+        <h2>Sinfonie di Paste e Risotti</h2>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Tortelli Ripieni all'Astice</span>
+            <span class="descrizione-piatto">Con vellutata di pomodorini gialli e basilico fresco</span>
+            <span class="prezzo">€ 28</span>
+        </div>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Risotto Mantecato al Tartufo Nero</span>
+            <span class="descrizione-piatto">Manteca finale con burro e scaglie di tartufo pregiato</span>
+            <span class="prezzo">€ 35</span>
+        </div>
 
-  <section id="chi-siamo">
-    <h2>Chi Siamo</h2>
-    <p>Siamo un team di professionisti dedicati al design e alla qualità. 
-       La nostra missione è creare esperienze digitali che evocano la stessa eleganza 
-       senza tempo di una pergamena antica con rifiniture dorate.</p>
-  </section>
+        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #b8860b, rgba(0, 0, 0, 0)); margin: 25px 0;">
 
-  <section id="servizi">
-    <h2>Servizi</h2>
-    <p>Offriamo consulenze di immagine, sviluppo web e design personalizzato, 
-       adattando ogni progetto alle esigenze dei nostri clienti più esigenti.</p>
-  </section>
+        <h2>Opere Maggiori di Terra e di Mare</h2>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Filetto di Manzo in Crosta di Erbe</span>
+            <span class="descrizione-piatto">Servito con patate Duchessa e riduzione al Barolo</span>
+            <span class="prezzo">€ 32</span>
+        </div>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Spigola Scottata su Letto di Asparagi</span>
+            <span class="descrizione-piatto">Con gocce di olio extra vergine d'oliva monocultivar</span>
+            <span class="prezzo">€ 29</span>
+        </div>
 
-  <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Scrivici per scoprire come possiamo aiutarti a trasformare la tua presenza online.</p>
-  </section>
+        <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #b8860b, rgba(0, 0, 0, 0)); margin: 25px 0;">
 
-  <footer>
-    &copy; 2025 ElegantMenu | Tutti i diritti riservati
-  </footer>
+        <h2>Conclusione Dolce e Nobile</h2>
+        
+        <div class="piatto">
+            <span class="nome-piatto">Mousse al Cioccolato Fondente Amedei</span>
+            <span class="descrizione-piatto">Con perle di lampone e oro alimentare</span>
+            <span class="prezzo">€ 12</span>
+        </div>
+
+        <p class="nota-finale">
+            *** Per Sua Signoria, si prega di informare il personale in caso di allergie o intolleranze alimentari. ***
+        </p>
+
+    </div>
 
 </body>
 </html>
